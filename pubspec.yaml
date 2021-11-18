@@ -1,4 +1,4 @@
-name: flutter_geolocation_firestore
+name: bus_tracker
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -44,6 +44,9 @@ dependencies:
   google_maps_flutter: ^2.1.0
   url_launcher: ^6.0.12
   device_info_plus: ^3.1.1
+  firebase_auth: ^3.2.0
+  flutter_polyline_points: ^1.0.0
+
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +70,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+    - images/my_icon.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -77,7 +82,13 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: fonts/Pacifico-Regular.ttf
+    - family: SourceSansPro
+      fonts:
+        - asset: fonts/SourceSansPro-Light.ttf
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

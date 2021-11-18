@@ -1,16 +1,28 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:bus_tracker/register_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:geoflutterfire/geoflutterfire.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:location/location.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'dart:async';
-import 'methods.dart';
-import 'package:rxdart/rxdart.dart';
-import 'package:device_info_plus/device_info_plus.dart';
+import 'login_screen.dart';
+import 'googlemaps.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        //'/': (context) => Login(),
+        '/register': (context) => Register(),
+        '/': (context) => Googlemaps(),
+      },
+    );
+  }
 }
